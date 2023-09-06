@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards</title>
+    <style>
+        * {
+            box-sizing: border-box; margin: 0; padding: 0;
+        }
+        :root {
+            font-size: 16px;
+        }
+        body {
+            display: flex; justify-content: center; align-items: center; height: 100vh;
+            background: linear-gradient(to right bottom, skyblue, lightcoral);
+        }
+        .card {
+            max-width: 25em; min-height: 25em;
+            margin: 0.5em; padding: 0.5em;
+            transform: scale(0.7) perspective(500px) rotateY(180deg) ;
+            box-shadow: 10px 10px 5px gray;
+            transition: all 250ms linear;
+        }
+        .card:hover {
+            transform: scale(1.0) rotate(0deg);
+        }
+
+        .card img, .card span {display: block;}
+        .card--img {
+            width: 100%; height: 25em; margin: auto;
+        }
+        .card--heading {
+            font-size: 1.5em;
+            margin-top: 0.9em;
+            font-weight: bold;
+        }
+        .card--description {
+            font-size: 0.9em;
+            margin-top: 0.5em;
+        }
+
+        .card--light {
+            background-color: white;
+        }
+        .card--light:hover {
+            box-shadow: 30px 30px 20px darkgray;
+        }
+        .card--dark {
+            background-color: black;
+            color: white;
+        }
+        .card--dark:hover {
+            box-shadow: 30px 30px 20px black;
+        }
+
+
+        @media (max-width: 690px) {
+            :root {font-size: 12px;}
+        }
+        @media (max-width: 510px) {
+            :root {font-size: 10px;}
+            body {flex-direction: column;}
+        }
+
+    </style>
+</head>
+<body>
+    <div class="card card--light">
+        <img src="https://i.postimg.cc/pdzBFPBQ/index-harvard-CS50.gif" alt="" class="card--img">
+        <span class="card--heading">I am light card</span>
+        <span class="card--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore minima ex culpa, nostrum optio voluptate non itaque libero voluptatum quas eos amet excepturi, rerum vero hic id molestias quos cum?</span>
+    </div>
+
+    <div class="card card--dark">
+        <img src="https://i.postimg.cc/pdzBFPBQ/index-harvard-CS50.gif" alt="" class="card--img">
+        <span class="card--heading">I am dark card</span>
+        <span class="card--description">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Inventore minima ex culpa, nostrum optio voluptate non itaque libero voluptatum quas eos amet excepturi, rerum vero hic id molestias quos cum?</span>
+    </div>
+</body>
+</html>
